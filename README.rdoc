@@ -10,5 +10,4 @@ If you would like to run my Rails on Ruby app please do the following:
 - You can stick with the path being on localhost:3000 or chose any other port.
 - Once things are up and running feel free to look at the code, modify or interact with the application.
 
-				                             	...................................
-						                                        	end
+- end				                          
