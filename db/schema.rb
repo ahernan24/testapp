@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140625215027) do
+ActiveRecord::Schema.define(version: 20140630193138) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_favorite", default: false
   end
 
 end
