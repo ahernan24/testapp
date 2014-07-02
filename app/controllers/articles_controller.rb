@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     
+    
     if @article.save
       redirect_to @article
       
@@ -20,6 +21,10 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
   end
+  
+  def favorites
+     @articles = Article.where(is_favorite: true)
+   end
   
   def edit
     @article = Article.find(params[:id])
@@ -41,11 +46,10 @@ class ArticlesController < ApplicationController
     
     redirect_to articles_path
   end
-  
+
  private
   def article_params
-    params.require(:article).permit(:title, :text, :is_favorite)
+    params.require(:article).permit(:title, :text, :is_favorite, :photo)
   end
-   
-
+ 
 end
