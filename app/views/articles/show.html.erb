@@ -1,17 +1,22 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<div id="article-body">
+	<p>
+		<strong><%= @article.title %></strong>
+	</p>
 
 <p>
-  <strong>Is favorite:</strong>
-  <%= @article.is_favorite %>
-</p>
+		<%= @article.text %>
+	</p>
 
-<%= link_to 'Back', articles_path %>
-| <%= link_to 'Edit', edit_article_path(@article) %>
+	<% if @article.photo.present? %>
+		<%= image_tag @article.photo.url %>
+		<%= image_tag @article.photo.url(:medium) %>
+		<%= image_tag @article.photo.url(:thumb) %>
+	<% end %>
+	<p>
+		<%= link_to 'Back', articles_path %>
+		| <%= link_to 'Edit', edit_article_path(@article) %>
+  </p>
+</div>
+
+	<!--<strong>Is favorite:</strong>-->
+	<!--<%= @article.is_favorite %>-->
