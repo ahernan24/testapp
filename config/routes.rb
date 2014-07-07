@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   
   
   get '/favorites' => "articles#favorites"
+
   
    
   # Example of regular route:
