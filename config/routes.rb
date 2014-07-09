@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   
   get '/favorites' => "articles#favorites"
 
+  resources :articles do
+    resources :comments
+  end
   
    
   # Example of regular route:
