@@ -41,4 +41,16 @@
 	font-height: bold;
 	color: #069;
 	border-right: 1px solid #ccc;
+
 }
+
+
+.user_logg {
+	
+	float: right;
+	padding: 8px 15px;
+	font-height: bold;
+
+}
+
+
