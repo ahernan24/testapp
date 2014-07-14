@@ -23,22 +23,43 @@ h1 {
 
 	float:right; 
 	padding: 5px;
+	
 }
 
-.art_img {
+#article_box{
+
+	width:800px;
+	height:400px;
+}
+
+
+#art_img {
+
+	
+	float:left;
+	padding: 5px;
+	text-align:left;
+	width: auto;
+	height: auto;
+	 
+	}
+
+.art_title {
+ 
+	float: left;
+	padding: 5px;
+	text-align:right;
+	border: 2px solid blue;
+
+}
+
+.art_text {
 
 	float:left;
 	padding:5px;
-
+	text-align:left;
+	height: 100px;
+	width:400px;
 }
 
-.article_title {
-
-	float:left;
-	width: 220px;
-	padding: 10px;
-	border: 1px solid black;
-	margin: 0px;
-
-}
 
