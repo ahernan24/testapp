@@ -2,9 +2,8 @@ class CommentsController < ApplicationController
   
 def create
   @article = Article.find(params[:article_id])
-  @comment = @article.comments.build(comment_params)
-  binding.pry
-  @commment.user_id = current_user.id
+  @comment = current_user.comments.build(comment_params)
+  @comment.article_id = @article.id 
   if @comment.save! 
     redirect_to article_path(@article)
   end
