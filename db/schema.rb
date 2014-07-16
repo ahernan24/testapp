@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20140714201732) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_favorite",        default: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
