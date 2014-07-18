@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714201732) do
+ActiveRecord::Schema.define(version: 20140718212508) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -22,7 +22,11 @@ ActiveRecord::Schema.define(version: 20140714201732) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.boolean  "is_favorite"
+    t.integer  "user_id"
   end
+
+  add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.string   "commenter"
@@ -35,6 +39,13 @@ ActiveRecord::Schema.define(version: 20140714201732) do
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "favorites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
