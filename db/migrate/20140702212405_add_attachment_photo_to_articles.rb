@@ -3,7 +3,7 @@ class AddAttachmentPhotoToArticles < ActiveRecord::Migration
     change_table :articles do |t|
       t.attachment :photo
     end
-  end
+end
 
   def self.down
     drop_attached_file :articles, :photo
