@@ -1,8 +1,8 @@
 class FavoritesController < ApplicationController
 
-  def favorite
+  def create
     @article = Article.find(params[:article_id])
-    @user.favorites << @article
-    
+    current_user.favorite_articles << @article
+      render nothing: true
   end
 end
