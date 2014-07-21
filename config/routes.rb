@@ -7,13 +7,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   # You can have the root of your site routed with "root"
   resources :articles
-
-
+  
+  post 'favorite', to: 'favorites#favorite'
   
   root 'welcome#index'
   
-  
-  get '/favorites' => "articles#favorites"
+  get '/user_favorites' => "articles#favorites"
 
   resources :articles do
     resources :comments
