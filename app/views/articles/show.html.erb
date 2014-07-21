@@ -17,8 +17,8 @@
 </div>
 
 <div id="fav_button">
-	<%= form_tag(controller: 'favorites', action: '/favorite', method: 'post', remote: true) do %>
-	  <%= submit_tag("favorite") %>
+	<%= form_for @article, url: article_favorites_path(@article), method: 'post', remote: true do |f| %>
+	  <%= f.submit "Add to favorites" %>
 	<% end %>
 	
 </div>
@@ -28,7 +28,7 @@
 	<h2> Comments </h2>
 		<%= render @article.comments %>
 
-		<h2> Add a comment: </h2>s
+		<h2> Add a comment: </h2>
 			<%= render 'comments/form' %>
 	
 	<p>
