@@ -10,16 +10,25 @@
 		<%= image_tag @article.photo.url(:medium)%>
 	</div>
 		
+	
 	<p>
 		<%= @article.text %>
 	</p>
+</div>
+
+<div id="fav_button">
+	<%= form_tag(controller: 'favorites', action: '/favorite', method: 'post', remote: true) do %>
+	  <%= submit_tag("favorite") %>
+	<% end %>
 	
 </div>
+
+
 
 	<h2> Comments </h2>
 		<%= render @article.comments %>
 
-		<h2> Add a comment: </h2>
+		<h2> Add a comment: </h2>s
 			<%= render 'comments/form' %>
 	
 	<p>
