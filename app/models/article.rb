@@ -6,7 +6,7 @@ class Article < ActiveRecord::Base
 
   has_many :comments, dependent: :destroy
   validates :title, presence: true,
-                  length: { minimum: 5 }
+                  length: { minimum: 3 }
   has_many :favorites
   has_many :favorited_by, through: :favorites  
   belongs_to :user
