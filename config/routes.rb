@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   
   root 'welcome#index'
   
-  get '/user_favorites' => "articles#favorites"
+  get '/favorites' => "articles#favorites"
 
   resources :articles do
     resources :comments
+    resources :favorites, only: [:create]
   end
   
    
