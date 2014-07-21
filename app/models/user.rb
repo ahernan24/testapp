@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :favorites 
   has_many :articles
-  has_many :favorite_articles, :through => :favorites 
+  has_many :favorite_articles, :through => :favorites, source: :article 
   
 end
