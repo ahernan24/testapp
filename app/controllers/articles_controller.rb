@@ -22,9 +22,9 @@ class ArticlesController < ApplicationController
   end
   
   def favorites
-     @articles = Article.where(is_favorite: true)
-   end
-  
+    @articles = current_user.favorite_articles
+  end
+
   def edit
     @article = Article.find(params[:id])
   end
@@ -49,7 +49,7 @@ class ArticlesController < ApplicationController
 
  private
   def article_params
-    params.require(:article).permit(:title, :text, :is_favorite, :photo)
+    params.require(:article).permit(:title, :text, :photo)
   end
  
 end
