@@ -1,20 +1,18 @@
 <h1> Favorite articles </h1>
 <hr>
-<table>
- <tr>
-  <th> Title </th>
-  <th> Text </th>
-  <th coldspan '1'></th>
- 
-
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-    </tr>
+ <div id="wrapper">
+	 
+  <% @articles.each do |favorite_article| %>
+   <p> <div id="article_box"></p>
+			<div id="art_img"><%= image_tag favorite_article.photo.url(:medium)%> </div>
+      <div class="art_title"><%= favorite_article.title %></div>
+      <div class="art_text"><%= truncate(favorite_article.text, length: 900)%></div>
+			<div class="art_options"><%= link_to 'Show', article_path(favorite_article) %></div>
+    </div>
   <% end %>
-</table>
+
 
 <p> 
  <%= link_to "Back", articles_path %> 
 </p>
+</div>
